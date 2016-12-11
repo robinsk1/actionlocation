@@ -1,4 +1,4 @@
-<%= form_for(location) do |f| %>
+<%= form_for(location, html: { multipart: true }) do |f| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
@@ -19,6 +19,14 @@
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <p>Upload Picture</p>
+    <%= f.fields_for :photo_attributes do |image_upload| %> 
+      <%= image_upload.file_field :image, class: "form-control"  %>
+    <% end %>
+  </div>
   </div>
 
   <div class="actions">

@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
-  has_many :photos, :as => :imageable
+  #attr_accessible :photos_attributes
+  has_many :photos, :as => :imageable, dependent: :destroy
   accepts_nested_attributes_for :photos
 end
