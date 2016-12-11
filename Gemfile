@@ -30,12 +30,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'devise'
 
+# ActiveAdmin
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec'
+  gem 'rspec-rails', '~> 3.5'
   gem 'byebug'
 end
 
