@@ -34,6 +34,9 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+#Amazon
+gem 'aws-sdk', '~> 2.3.0'
+gem "paperclip", "~> 5.0.0.beta1"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
