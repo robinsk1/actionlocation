@@ -40,6 +40,11 @@ gem "paperclip", "~> 5.0.0.beta1"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#front-end
+gem 'haml-rails'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.5'
@@ -54,3 +59,6 @@ group :development do
   gem 'spring'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
