@@ -1,2 +1,7 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+= render "carousel"
+/ Page Content
+.container
+  = render "welcome/marketing"
+  = render "welcome/locations"
+  = render "welcome/feature"
+  = render "welcome/contact"
