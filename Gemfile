@@ -42,8 +42,8 @@ gem "paperclip", "~> 5.0.0.beta1"
 
 #front-end
 gem 'haml-rails'
-gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap-sass', '~> 3.3.6'
+#gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
