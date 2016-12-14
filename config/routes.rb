@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/spots'
+
+  get 'pages/shoots'
+
+  get 'pages/events'
+
+  get 'pages/reports'
+
   get 'welcome/index'
 
   resources :locations
