@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-lg-12
+      %h2.page-header
+        =@location.name
+    .col-lg-12
+      =image_tag @location.photos.first.image.url
+    .col-lg-12
+      =@location.description

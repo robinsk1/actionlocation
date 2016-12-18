@@ -2,7 +2,7 @@
 / Page Content
 .container
   = render "welcome/services"
-  = render "welcome/locations"
+  = render "welcome/locations", locals: { locations: @locations}
   = render "welcome/feature"
   = render "welcome/localization"
   = render "welcome/contact"

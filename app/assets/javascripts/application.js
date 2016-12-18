@@ -11,7 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.easing.1.3
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('a.smooth-scroll').on('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+        scrollTop: $($anchor.attr('href')).offset().top + 20
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+});
