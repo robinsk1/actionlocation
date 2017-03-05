@@ -14,10 +14,12 @@
 //= require jquery.easing.1.3
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 $('a.smooth-scroll').on('click', function(event) {
+    alert("hey");
     var $anchor = $(this);
     $('html, body').stop().animate({
         scrollTop: $($anchor.attr('href')).offset().top + 20
