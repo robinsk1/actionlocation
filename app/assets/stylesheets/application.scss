@@ -2,12 +2,33 @@
 @import "bootstrap";
 @import "modern-business";
 
-$electric-pink: #df0e6c;
-$dark-grey: #A9A9A9;
+$electric-pink: #FF485D;
+$dark-grey: #516067;
+$navbar-link: white;
+$body-text: white;
 
+body {
+  background-color: $dark-grey;
+  color: $body-text;
+}
 .navbar-inverse {
   background-color: $electric-pink;
   border-color: $electric-pink;
-  //opacity: 0.5;
-  //filter: alpha(opacity=50);
+}
+
+.nav.navbar-nav.navbar-right li a {
+  color: $navbar-link;
+}
+
+.navbar-brand {
+  background-image: image-url('location.svg');
+  background-repeat: no-repeat;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: transparent;
 }
