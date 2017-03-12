@@ -1,3 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modern-business";
+
+$electric-pink: #df0e6c;
+$dark-grey: #A9A9A9;
+
+.navbar-inverse {
+  background-color: $electric-pink;
+  border-color: $electric-pink;
+  //opacity: 0.5;
+  //filter: alpha(opacity=50);
+}
