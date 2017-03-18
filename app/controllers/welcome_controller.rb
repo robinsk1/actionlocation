@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @locations = Location.all
+    @locations = Location.all.featured
     @contact = Contact.new
   end
 

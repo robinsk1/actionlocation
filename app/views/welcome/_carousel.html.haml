@@ -1,3 +1,4 @@
+- active = @locations.active.first
 %header#myCarousel.carousel.slide
   / Indicators
   %ol.carousel-indicators
@@ -7,17 +8,16 @@
           / Wrapper for slides
   .carousel-inner
     .item.active
-      .fill{:style => "background-image:url('http://placehold.it/1900x1080&text=Slide One');"}
+      .fill{:style => "background-image:url(#{active.photos.first.image.url(:original)});"}
         .carousel-caption
-          %h2 Caption 1
-    .item
-      .fill{:style => "background-image:url('http://placehold.it/1900x1080&text=Slide Two');"}
-        .carousel-caption
-          %h2 Caption 2
-    .item
-      .fill{:style => "background-image:url('http://placehold.it/1900x1080&text=Slide Three');"}
-        .carousel-caption
-          %h2 Caption 3
+          %h2
+            =active.strap
+    - @locations.banner.each do |banner|
+      .item
+        .fill{:style => "background-image:url(#{banner.photos.first.image.url(:original)});"}
+          .carousel-caption
+            %h2
+              =banner.strap
   / Controls
   %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
     %span.icon-prev
