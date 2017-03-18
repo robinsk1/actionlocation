@@ -3,7 +3,7 @@ ActiveAdmin.register Location do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
- permit_params :name, :description, photos_attributes: [:image]
+ permit_params :name, :description, photos_attributes: [:id, :image, :_destroy]
 
  index do
    selectable_column
