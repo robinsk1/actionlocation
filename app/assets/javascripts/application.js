@@ -17,12 +17,3 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
-
-$('a.smooth-scroll').on('click', function(event) {
-    alert("hey");
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top + 20
-    }, 1500, 'easeInOutExpo');
-    event.preventDefault();
-});

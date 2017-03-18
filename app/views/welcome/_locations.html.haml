@@ -1,10 +1,8 @@
-/ Portfolio Section
 .row{ id: "locations" }
   .col-lg-12
-    %h2.page-header Locations
+    %h2.page-header.locations-header Locations
 
   .col-md-4.col-sm-6
-    =@locations.each do |loc|
+    -@locations.each do |loc|
       %a{:href => "#{location_path(loc.id)}"}
         %img.img-responsive.img-portfolio.img-hover{:alt => "", :src => loc.photos.first.image.url(:medium)}/
-/ /.row

@@ -13,14 +13,21 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a.smooth-scroll{:href => "#services"} Services
+          -if current_page?(root_path)
+            %a.smooth-scroll{:href => "#services"} Services
+          -else
+            %a{:href => "#{root_path}#services"} Services
         %li
-          %a.smooth-scroll{:href => "#locations"} Locations
+          %a{:href => "#{locations_path}"} Locations
         %li
-          %a.smooth-scroll{:href => "#feature"} El Maresme
+          -if current_page?(root_path)
+            %a.smooth-scroll{:href => "#feature"} El Maresme
+          -else
+            %a{:href => "#{root_path}#feature"} El Maresme
         %li
-          %a.smooth-scroll{:href => "#localization"} Localizations
-        %li
-          %a.smooth-scroll{:href => "#contact"} Contact
+          -if current_page?(root_path)
+            %a.smooth-scroll{:href => "#contact"} Contact
+          -else
+            %a{:href => "#{root_path}#contact"} Contact
     / /.navbar-collapse
   / /.container
