@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modern-business";
+@import "contact-form";
 
 $electric-pink: #FF485D;
 $dark-grey: #516067;
@@ -35,4 +36,8 @@ body {
 
 .feature-header, .locations-header, .services-header {
   padding-top: 20px;
+}
+
+.maresme-feature {
+  padding-top: 30px
 }

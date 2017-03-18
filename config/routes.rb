@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  post '/mail', to: 'welcome#create_mail', as: 'send_mail'
+
   resources :locations
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
