@@ -2,6 +2,11 @@ class WelcomeController < ApplicationController
   def index
     @locations = Location.all.featured
     @contact = Contact.new
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.title location.name
+    end
   end
 
   def create_mail

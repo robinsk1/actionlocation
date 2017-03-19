@@ -3,12 +3,15 @@
     .col-lg-12
       %h2.page-header
         = @location.name
-    .col-lg-12
+  .row
+    .col-lg-6
       = image_tag @location.photos.first.image.url
-    .col-lg-12
+    .col-lg-6
       = @location.description
   .row
     .col-lg-12
+      %div{:style => "width: 800px;"}
+        #map{:style => "width: 800px; height: 400px;", data:{ points: @hash.to_json }}
 
 .container
   - @location.photos.each do |photo|

@@ -1,12 +1,21 @@
 class LocationsController < InheritedResources::Base
 
-  def new
-    @location = Location.new
-    @location.photos.build
+  def show
+    @location = Location.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.title location.name
+    end
+    respond_with(@location)
   end
 
-  private
+  #def new
+    #@location = Location.new
+    #@location.photos.build
+  #end
 
+  private
     def location_params
       params.require(:location).permit(:name, :description, :photo_attributes)
     end
