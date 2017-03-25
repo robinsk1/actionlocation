@@ -73,4 +73,8 @@ end
 gem 'mail_form'
 gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
+gem "activeadmin-globalize", github: 'anthony-robin/activeadmin-globalize'
+
 

@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+
+  active_admin:
+    globalize:
+      language:
+        cat: Catalan

@@ -14,7 +14,10 @@ ActiveAdmin.register Location do
                :city,
                :tags,
                photos_attributes: [:id, :image, :_destroy],
-               :tag_list => []
+               :tag_list => [],
+               translations_attributes: [
+                :id, :locale, :name, :description, :strap
+               ]
 
  index do
    selectable_column
@@ -26,6 +29,7 @@ ActiveAdmin.register Location do
    column :city
    column :banner
    column :active
+   translation_status
    actions
  end
 
@@ -83,6 +87,10 @@ ActiveAdmin.register Location do
        f.has_many :photos, heading: 'Add photos', allow_destroy: true do |a|
          a.input :image, :as => :file, :hint => image_tag(a.object.image.url)
        end
+     end
+     f.translated_inputs "Translated fields", switch_locale: true do |t|
+      t.input :strap
+      t.input :description
      end
      f.input :tag_list, :as => :check_boxes, :collection => ActsAsTaggableOn::Tag.all.map(&:name)   end
    f.actions

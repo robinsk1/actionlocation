@@ -1,0 +1,5 @@
+cat:
+  active_admin:
+    globalize:
+      language:
+        cat: Catalan
