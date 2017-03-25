@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  acts_as_taggable_on :tags
   validates :name, presence: true
   validates :description, presence: true
   validates :strap, presence: true
@@ -13,6 +14,10 @@ class Location < ApplicationRecord
 
   def full_address
     [city, post_code, street_address_1].compact.join(", ")
+  end
+
+  def first_photo
+    photos.first.image
   end
 
 end

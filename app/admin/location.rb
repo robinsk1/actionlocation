@@ -12,11 +12,14 @@ ActiveAdmin.register Location do
                :post_code,
                :street_address_1,
                :city,
-               photos_attributes: [:id, :image, :_destroy]
+               :tags,
+               photos_attributes: [:id, :image, :_destroy],
+               :tag_list => []
 
  index do
    selectable_column
    id_column
+   image_column :first_photo, style: :thumbnail
    column :name
    column :description
    column :featured
@@ -57,6 +60,11 @@ ActiveAdmin.register Location do
         image_tag photo.image.url
      end
    end
+   location.tags.each do |tag|
+     div do
+       tag.name
+     end
+   end
  end
 
  form do |f|
@@ -72,12 +80,11 @@ ActiveAdmin.register Location do
      f.input :city
      f.input :street_address_1
      f.inputs "Photo", :multipart => true do
-       f.has_many :photos, heading: 'Photos', allow_destroy: true do |a|
+       f.has_many :photos, heading: 'Add photos', allow_destroy: true do |a|
          a.input :image, :as => :file, :hint => image_tag(a.object.image.url)
        end
      end
-   end
-
+     f.input :tag_list, :as => :check_boxes, :collection => ActsAsTaggableOn::Tag.all.map(&:name)   end
    f.actions
  end
 

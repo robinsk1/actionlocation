@@ -31,6 +31,7 @@ gem 'devise'
 # ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin_addons'
 
 #Amazon
 gem 'aws-sdk', '~> 2.3.0'
@@ -71,3 +72,5 @@ end
 
 gem 'mail_form'
 gem 'simple_form'
+gem 'acts-as-taggable-on', '~> 4.0'
+

@@ -1,4 +1,5 @@
 $(document).ready ->
+  #https://snazzymaps.com/style/39/paper
   mapStyle = [
     {
       'featureType': 'administrative'
@@ -69,10 +70,10 @@ $(document).ready ->
   handler = Gmaps.build('Google')
   handler.buildMap {
     provider: {
-      zoom:15,
+      zoom: 20,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      style: mapStyle
-    }
+      styles: mapStyle
+    },
     internal: id: 'map'
   }, ->
     markers = handler.addMarkers($('#map').data('points'))
